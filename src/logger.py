@@ -1,7 +1,7 @@
 import logging
 import os
 from datetime import datetime
-from logger import *
+
 LOG_FILE=f"{datetime.now().strftime('%m_%d_%Y_%H_%M_%S')}.log"
 logs_path=os.path.join(os.getcwd(),"logs",LOG_FILE)
 os.makedirs(logs_path,exist_ok=True)
@@ -20,9 +20,4 @@ logging.basicConfig(
 
 
 if __name__=="__main__":
-    try:
-        a=1/0
-    except:
-        logging.info("Divide by Zero")
-        raise CustomExpection
-    
+    logging.info("Logging has started")
